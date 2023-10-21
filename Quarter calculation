@@ -1,0 +1,28 @@
+# a program that calculates the sum of the elements: the upper quarter; right quarter; lower quarter; left quarter
+
+n = int(input())
+matrix = []
+sum1 = 0
+sum2 = 0
+sum3 = 0
+sum4 = 0
+
+for i in range(n):
+    temp = [int(num) for num in input().split()]
+    matrix.append(temp)
+
+for i in range(n):
+    for j in range(n):
+        if i < j and i < n - 1 - j:
+            sum1 += matrix[i][j]
+        elif i < j and i > n - 1 - j:
+            sum2 += matrix[i][j]
+        elif i > j and i > n - 1 - j:
+            sum3 += matrix[i][j]
+        elif i > j and i < n - 1 - j:
+            sum4 += matrix[i][j]
+
+print('Upper quarter:', sum1)
+print('right quarter:', sum2)
+print('lower quarter:', sum3)
+print('left quarter:', sum4)
